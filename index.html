@@ -607,7 +607,7 @@
                     beaker1content2 += "NH₄Cl (aq)"
                 }
             } else {
-                if (NH4CLED == true) {
+                if (NH4CLED2 == true) {
                     return;
                 }
 
@@ -622,13 +622,13 @@
                 cd = true;
 
 
-                if (IsWatered) {
-                    beaker.src = "images/noreaction.gif";
+                if (IsWatered2) {
+                    beaker2.src = "images/noreaction.gif";
                     setTimeout(() => {
-                        beaker.src = "images/iloveujem-removebg-preview.png";
+                        beaker2.src = "images/iloveujem-removebg-preview.png";
                         cd = false;
                     }, 900)
-                    NH4CLED = true;
+                    NH4CLED2 = true;
                     document.getElementById('chemicalteller1').textContent += " + NH₄Cl"
                     document.getElementById('chemicalteller2').textContent = "NH₄Cl (aq)"
                     beaker2content += " + NH₄Cl"
