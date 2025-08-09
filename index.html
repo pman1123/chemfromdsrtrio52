@@ -483,6 +483,11 @@
 
 
         CaCO3button.addEventListener('click', () => {
+
+               if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
+
          if (whichbeaker == 1) {
 
                 if (caco3ED == true) {
@@ -569,6 +574,9 @@
 
         NH4CLbutton.addEventListener('click', () => {
 
+            if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
             if (whichbeaker == 1) {
 
                 if (NH4CLED == true) {
@@ -632,6 +640,10 @@
 
         NaOHbutton.addEventListener('click', () => {
 
+               if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
+
             if (whichbeaker == 1) {
                 if (naohED == true) {
                     return;
@@ -694,7 +706,9 @@
 
         AGNO3button.addEventListener('click', () => {
 
-
+               if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
 
             if (whichbeaker == 1) {
                 if (AgNo3ED == true) {
@@ -763,7 +777,9 @@
 
         PbNO3button.addEventListener('click', () => {
 
-
+            if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
 
             if (whichbeaker == 1) {
                 if (PbNo3ED == true) {
@@ -828,7 +844,9 @@
 
         KIbutton.addEventListener('click', () => {
 
-
+            if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
 
             if (whichbeaker == 1) {
                 if (KIeD == true) {
@@ -892,6 +910,10 @@
         });
 
         Na2CO3button.addEventListener('click', () => {
+
+               if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
 
             if (whichbeaker == 1) {
                 if (Na2CO3ED == true) {
@@ -957,8 +979,10 @@
 
         H2Obutton.addEventListener('click', () => {
 
+            if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
             document.getElementById('chemicalteller2').textContent = ""
-
 
             if (whichbeaker == 1) {
                 beaker1content2 = ""
@@ -1021,9 +1045,14 @@
 
         HCLbutton.addEventListener('click', () => {
 
+              if (mix.textContent == "เริ่มใหม่") {
+                return;
+            }
+
+
             document.getElementById('chemicalteller2').textContent = ""
 
-
+           
             if (whichbeaker == 1) {
                 beaker1content2 = ""
                 beaker1content = ""
