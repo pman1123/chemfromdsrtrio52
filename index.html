@@ -56,22 +56,32 @@
         }
 
         #Bubble {
+            display: none;
             position:  absolute;
-            top: 490px;
-            right: 780px;
-            transform: translate(-50%, 0);
-            width: 100px;
-            height: 100px;
+            top: 37.5vh;
+             margin-left: 32%;
+             width: 10vh;
+            height: 6vw;
             z-index: 3;
         }
 
         #Bubble2 {
+            display: none;
             position: absolute;
-            top: 490px;
-            right: 1070px;
-            transform: translate(-50%, 0);
-            width: 100px;
-            height: 100px;
+            top: 37.5vh;
+            margin-left: 11.5%;
+             width: 10vh;
+            height: 6vw;
+            z-index: 3;
+        }
+
+        #Bubble3 {
+            display: none;
+            position: absolute;
+            top: 37.5vh;
+            margin-left: 42.5vh;
+             width: 10vh;
+            height: 6vw;
             z-index: 3;
         }
 
@@ -294,6 +304,7 @@
         <img id="Beaker2" src="images/jemsemptybeaker-removebg-preview.png" alt="beaker2">
         <img id="Finishproduct" src="images/jemsemptybeaker-removebg-preview.png" alt="beaker2">
         <img id="Bubble2" src="images/bubble.gif" alt="beaker">
+        <img id="Bubble3" src="images/bubble.gif" alt="beaker">
     </div>
 
     <div class="box">
@@ -338,6 +349,7 @@
         const beaker2 = document.getElementById('Beaker2')
         const bubble = document.getElementById('Bubble')
         const bubble2 = document.getElementById('Bubble2')
+        const bubble3 = document.getElementById('Bubble3')
         const fp = document.getElementById('Finishproduct')
         const mix = document.getElementById('mixing')
 
@@ -370,8 +382,9 @@
 
         let cd = false;
 
-        bubble.style.display = 'none';
-        bubble2.style.display = 'none';
+        // bubble.style.display = 'none';
+        // bubble2.style.display = 'none';
+        // bubble3.style.display = 'none';
         fp.style.display = 'none';
         
         
@@ -385,6 +398,7 @@
 
             bubble.style.display = 'none';
             bubble2.style.display = 'none';
+            bubble3.style.display = 'none';
             beaker.style.display = 'none';
             beaker2.style.display = 'none';
             fp.style.display = 'grid';
@@ -466,6 +480,16 @@
                     document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
                     document.getElementById('chemicalteller1').textContent = "Pb(NO₃)₂ (aq) + NaOH  (aq)"
                     document.getElementById('chemicalteller2').textContent = "2AgNO₃ (aq) + 2NaOH (aq) → Ag₂O (s) + 2NaNO₃ (aq)"
+                }, 2000)
+            }else if ((beaker1content2 == "CaCl₂ (aq)" && beaker2content2 == "CaCl₂ (aq)") ) {
+                fp.src = "images/mixingtogether2.gif"
+                setTimeout(() => {
+                    mix.textContent = "เริ่มใหม่"
+                     bubble3.style.display = "grid";
+                    fp.src = "images/iloveujem-removebg-preview.png"
+                    document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
+                    document.getElementById('chemicalteller1').textContent = "CaCl₂ (aq) + CaCl₂ (aq) "
+                    document.getElementById('chemicalteller2').textContent = "CaCl₂ (aq) + CaCl₂ (aq) → 2CaCl₂ (aq)"
                 }, 2000)
             }else {
                  fp.src = "images/mixingtogether2.gif"
@@ -1090,7 +1114,7 @@
             }
 
             cd = true;
-            bubble.style.display = 'none';
+            // bubble.style.display = 'none';
             document.getElementById('chemicalteller1').textContent = "HCl"
             if (whichbeaker == 1) {
                 beaker1content += "HCl"
