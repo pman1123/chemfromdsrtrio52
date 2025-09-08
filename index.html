@@ -513,6 +513,16 @@
                     document.getElementById('chemicalteller1').textContent = "CaCl₂ (aq) + H₂O (aq)"
                     document.getElementById('chemicalteller2').textContent = "ไม่เกิดปฏิกิริยา"
                 }, 2000)
+             }else if ((beaker1content2 == "CaCO₃ (aq)" && beaker2content2 == "" && IsHCLed2 == true  || beaker2content2 == "CaCO₃ (aq)" && beaker1content2 == "" && IsHCLed == true)) {
+               fp.src = "images/mixingtogether2.gif"
+                setTimeout(() => {
+                    mix.textContent = "เริ่มใหม่"
+                     bubble3.style.display = "grid";
+                    fp.src = "images/iloveujem-removebg-preview.png"
+                    document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
+                    document.getElementById('chemicalteller1').textContent = "CaCO₃ (aq) + HCL (aq)"
+                    document.getElementById('chemicalteller2').textContent = "CaCO₃ (s) + 2HCl (aq) → CaCl₂ (aq) + H₂O (l) + CO₂ (g)"
+                }, 2000)
             }else {
                  fp.src = "images/mixingtogether2.gif"
                 setTimeout(() => {
