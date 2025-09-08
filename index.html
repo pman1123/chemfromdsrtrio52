@@ -56,6 +56,7 @@
         }
 
         #Bubble {
+            pointer-events: none;
             display: none;
             position:  absolute;
             top: 37.5vh;
@@ -66,6 +67,7 @@
         }
 
         #Bubble2 {
+            pointer-events: none;
             display: none;
             position: absolute;
             top: 37.5vh;
@@ -76,6 +78,7 @@
         }
 
         #Bubble3 {
+            pointer-events: none;
             display: none;
             position: absolute;
             top: 37.5vh;
@@ -393,8 +396,8 @@
             if (cd == true) { return; }
             cd = true
 
-            if (beaker1content2 == "") { return; }
-            if (beaker2content2 == "") { return; }
+            if (beaker1content2 == "" && IsHCLed == false && IsWatered == false) { return; }
+            if (beaker2content2 == "" && IsHCLed2 == false && IsWatered2 == false) { return; }
 
             bubble.style.display = 'none';
             bubble2.style.display = 'none';
@@ -469,7 +472,7 @@
                     mix.textContent = "เริ่มใหม่"
                     fp.src = "images/white.png"
                     document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
-                    document.getElementById('chemicalteller1').textContent = "Pb(NO₃)₂ (aq) + NH₄Cl (aq)"
+                    document.getElementById('chemicalteller1').textContent = "AgNO₃ (aq) + NH₄Cl (aq)"
                     document.getElementById('chemicalteller2').textContent = "AgNO₃ (aq) + NH₄Cl (aq) → AgCl (s) + NH₄NO₃ (aq)"
                 }, 2000)
             } else if ((beaker1content2 == "AgNO₃ (aq)" && beaker2content2 == "NaOH (aq)") || ((beaker1content2 == "NaOH (aq)" && beaker2content2 == "AgNO₃ (aq)"))) {
@@ -478,7 +481,7 @@
                     mix.textContent = "เริ่มใหม่"
                     fp.src = "images/brown.png"
                     document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
-                    document.getElementById('chemicalteller1').textContent = "Pb(NO₃)₂ (aq) + NaOH  (aq)"
+                    document.getElementById('chemicalteller1').textContent = "AgNO₃ (aq) + NaOH  (aq)"
                     document.getElementById('chemicalteller2').textContent = "2AgNO₃ (aq) + 2NaOH (aq) → Ag₂O (s) + 2NaNO₃ (aq)"
                 }, 2000)
             }else if ((beaker1content2 == "CaCl₂ (aq)" && beaker2content2 == "CaCl₂ (aq)") ) {
@@ -490,6 +493,25 @@
                     document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
                     document.getElementById('chemicalteller1').textContent = "CaCl₂ (aq) + CaCl₂ (aq) "
                     document.getElementById('chemicalteller2').textContent = "CaCl₂ (aq) + CaCl₂ (aq) → 2CaCl₂ (aq)"
+                }, 2000)
+             }else if ((beaker1content2 == "CaCl₂ (aq)" && beaker2content2 == "" && IsHCLed2 == true  || beaker2content2 == "CaCl₂ (aq)" && beaker1content2 == "" && IsHCLed == true)) {
+               fp.src = "images/mixingtogether2.gif"
+                setTimeout(() => {
+                    mix.textContent = "เริ่มใหม่"
+                     bubble3.style.display = "grid";
+                    fp.src = "images/iloveujem-removebg-preview.png"
+                    document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
+                    document.getElementById('chemicalteller1').textContent = "CaCl₂ (aq) + HCL (aq)"
+                    document.getElementById('chemicalteller2').textContent = "ไม่เกิดปฏิกิริยา"
+                }, 2000)
+            }else if ((beaker1content2 == "CaCl₂ (aq)" && beaker2content2 == "" && IsWatered2 == true  || beaker2content2 == "CaCl₂ (aq)" && beaker1content2 == "" && IsWatered == true)) {
+               fp.src = "images/mixingtogether2.gif"
+                setTimeout(() => {
+                    mix.textContent = "เริ่มใหม่"
+                    fp.src = "images/iloveujem-removebg-preview.png"
+                    document.getElementById('chemicaltellerdec').textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0สารที่ใช้"
+                    document.getElementById('chemicalteller1').textContent = "CaCl₂ (aq) + H₂O (aq)"
+                    document.getElementById('chemicalteller2').textContent = "ไม่เกิดปฏิกิริยา"
                 }, 2000)
             }else {
                  fp.src = "images/mixingtogether2.gif"
@@ -581,6 +603,7 @@
                 }
 
                 if (!beaker2content2 == "") {
+                    cd = false;
                     return;
                 }
 
